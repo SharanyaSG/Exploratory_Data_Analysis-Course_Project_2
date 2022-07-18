@@ -6,7 +6,7 @@
   sum_SSC <- readRDS("summarySCC_PM25.rds")
 
 ##-----------------------------------------------------------------------------------------------------------------##
-## PROJECT QUESTION 3 - Across the United States, how have emissions from coal combustion-related sources changed 
+## PROJECT QUESTION 4 - Across the United States, how have emissions from coal combustion-related sources changed 
 ## from 1999–2008?
 ##-----------------------------------------------------------------------------------------------------------------##
   gl<-grepl("(.*)(Comb)(.*)(Coal)(.*)",SCC$Short.Name)
@@ -17,6 +17,6 @@
   par(mfrow=c(1,1),mar=c(7,7,4,3))
   barplot(y_coal, names.arg = names(y_coal), col="pink", 
           main="ANNUAL COAL COMBUSTION RELATED PM2.5 EMISSIONS", 
-          xlab = "Year", ylab="M2.5 Emissions in tons", ylim = range(0,y_coal)*1.3) 
+          xlab = "Year", ylab="PM2.5 Emissions in tons", ylim = range(0,y_coal)*1.3) 
   png("plot4.png", width=700, height=600)
   dev.off()
